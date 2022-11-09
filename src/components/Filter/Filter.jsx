@@ -10,9 +10,7 @@ export const Filter = () => {
     const filter = useSelector(getFilter);
 
     const handleChange = e => {
-        if (e.target.name === 'filter') {
-            dispatch(visibleContacts(e.target.value));
-        }
+        dispatch(visibleContacts(e.target.value));
     };
 
     return (
