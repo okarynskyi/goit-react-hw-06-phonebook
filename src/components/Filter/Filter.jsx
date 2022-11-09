@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+import { nanoid } from '@reduxjs/toolkit';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilter } from 'redux/selectors';
 import { visibleContacts } from 'redux/filterSlice';

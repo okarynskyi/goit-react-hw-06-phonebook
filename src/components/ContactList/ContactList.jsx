@@ -13,9 +13,12 @@ export const ContactList = () => {
       return contacts;
     }
     const normalizedFilter = filter.toLocaleLowerCase();
-    const filterContacts = contacts.filter(({ name }) =>
-      name.toLocaleLowerCase().includes(normalizedFilter)
-    );
+    const filterContacts = contacts.filter(({ name, number }) => {
+      const normalizedName = name.toLowerCase();
+      const normalizedNumber = number.toLowerCase();
+      const result = normalizedName.includes(normalizedFilter) || normalizedNumber.includes(normalizedFilter);
+      return result
+    });
     return filterContacts;
   };
   const filteredContacts = getFilterContacts();
